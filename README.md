@@ -18,17 +18,32 @@ Gedouble is an independent project inspired by the architecture and developer ex
 
 ## Current status
 
-Early development. This repository currently documents the launcher project; installation, game detection, loader deployment, and launch integration are not implemented yet.
+The first Android app scaffold is in place:
+
+- Native Kotlin launcher screen.
+- Checks whether the official Geometry Dash Android package (`com.robtopx.geometryjump`) is installed.
+- Opens the installed game through its regular Android launch intent.
+- GitHub Actions workflow builds a debug APK.
+
+**Important:** this is currently a basic launcher prototype. It does not yet install, inject, initialize, or load Gedouble-Core, and it does not load mods. Those capabilities will be developed and tested separately.
+
+## Build
+
+The debug APK is built by the **Android APK** workflow on pushes to `main`, pull requests, or manual workflow dispatch.
+
+To build locally, install JDK 17, Android SDK platform 35, and Gradle 8.9, then run:
+
+```sh
+gradle assembleDebug
+```
+
+The APK is generated at `app/build/outputs/apk/debug/app-debug.apk`.
 
 ## Legal and distribution
 
 Gedouble is an independent community project and is not affiliated with or endorsed by RobTop Games. Geometry Dash is proprietary software. Users must obtain the game through legitimate channels. This project will not distribute the game's APK, copyrighted assets, or proprietary game files.
 
 We will study compatible open-source projects and respect their licenses and notices. No third-party code will be copied without verifying its license and complying with its terms.
-
-## Repositories
-
-See [Gedouble-Core](https://github.com/Prism-GD/Gedouble-core) and [Gedouble-SDK](https://github.com/Prism-GD/Gedouble-SDK).
 
 ## License
 
